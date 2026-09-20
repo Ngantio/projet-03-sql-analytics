@@ -9,7 +9,6 @@
 -- REQUÊTE 1 — Vue d'ensemble de la base
 -- ============================================================
 -- Objectif : avoir une photo globale du dataset
--- Concepts : COUNT, COUNT DISTINCT, SUM, MIN, MAX, ROUND
 
 SELECT 
     COUNT(*)                          AS nb_transactions,
@@ -26,7 +25,6 @@ FROM transactions;
 -- REQUÊTE 2 — Top 10 pays par revenu
 -- ============================================================
 -- Objectif : identifier les marchés les plus rentables
--- Concepts : GROUP BY, ORDER BY, LIMIT, fonctions d'agrégation
 
 SELECT 
     "Country"                              AS pays,
@@ -43,7 +41,6 @@ LIMIT 10;
 -- REQUÊTE 3 — Top 10 produits par revenu
 -- ============================================================
 -- Objectif : identifier les meilleures ventes
--- Concepts : WHERE, NOT IN, GROUP BY, ORDER BY
 
 SELECT 
     "Description"                         AS produit,
@@ -64,7 +61,6 @@ LIMIT 10;
 -- REQUÊTE 4 — Revenu cumulé par mois (Window Function)
 -- ============================================================
 -- Objectif : suivre la progression du CA sur l'année
--- Concepts : DATE_TRUNC, SUM() OVER(), Window Functions
 
 SELECT 
     DATE_TRUNC('month', "InvoiceDate")         AS mois,
@@ -81,7 +77,6 @@ ORDER BY mois;
 -- REQUÊTE 5 — Top clients avec CTE
 -- ============================================================
 -- Objectif : identifier les meilleurs clients et leur fidélité
--- Concepts : CTE (Common Table Expression), WITH
 
 WITH revenus_clients AS (
     -- Étape 1 : Calculer le revenu par client
@@ -115,7 +110,6 @@ LIMIT 10;
 -- REQUÊTE 6 — Créer une table de segmentation pays (pour JOIN)
 -- ============================================================
 -- Objectif : illustrer un JOIN avec une table de référence
--- Concepts : CREATE TABLE, INSERT, JOIN
 
 CREATE TABLE IF NOT EXISTS pays_region (
     pays        VARCHAR(50) PRIMARY KEY,
@@ -143,7 +137,6 @@ SELECT * FROM pays_region;
 -- REQUÊTE 7 — JOIN : Revenu par région géographique
 -- ============================================================
 -- Objectif : regrouper les ventes par grande région, pas juste par pays
--- Concepts : INNER JOIN, alias de table
 
 SELECT 
     pr.region,
@@ -160,7 +153,6 @@ ORDER BY revenu_total DESC;
 -- REQUÊTE 8 — Analyse de cohortes (mois de première commande)
 -- ============================================================
 -- Objectif : voir combien de clients reviennent après leur 1ère commande
--- Concepts : CTE imbriqués, DATE_TRUNC, rétention
 
 WITH premiere_commande AS (
     -- Étape 1 : Trouver le mois de première commande de chaque client
