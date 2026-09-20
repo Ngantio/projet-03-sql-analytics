@@ -1,4 +1,4 @@
-# Projet 3 — SQL Analytique + Text-to-SQL avec LLM 🗄️🤖
+# Projet 3 — SQL Analytique + Text-to-SQL avec LLM
 
 ## Contexte
 Ce projet exploite le même dataset e-commerce UK (UCI Online Retail) mais cette fois
@@ -10,8 +10,8 @@ d'interroger la base en langage naturel grâce à un LLM.
 ## Dataset & infrastructure
 - **Source :** [UCI Online Retail Dataset](https://archive.ics.uci.edu/dataset/352/online+retail)
 - **Base de données :** PostgreSQL 18
-- **Lignes importées :** 530 104 transactions nettoyées (via Python/SQLAlchemy)
-- **LLM utilisé :** Groq API — modèle `openai/gpt-oss-120b` (accès gratuit)
+- **Lignes importées :** 530 104 transactions nettoyées 
+- **LLM utilisé :** Groq API — modèle `openai/gpt-oss-120b`
 
 ## Partie 1 — SQL Analytique
 
@@ -27,10 +27,10 @@ d'interroger la base en langage naturel grâce à un LLM.
 ### Insights clés
 | # | Finding |
 |---|---|
-| 🌍 | Le Royaume-Uni génère 87% du CA, mais avec le **panier moyen le plus bas** (£18.60) — signe d'une base B2C locale volumineuse |
-| 🏢 | Pays-Bas et Australie ont des paniers moyens de **£121 et £117** — clientèle grossiste B2B |
-| 📉 | La rétention à 1 mois **chute de 36.6% à 15%** entre décembre 2010 et mars 2011 — signal d'alerte fidélisation |
-| 👑 | Le client `14646` génère à lui seul **£280K** de revenu sur 73 commandes, actif 353 jours sur 365 |
+|   | Le Royaume-Uni génère 87% du CA, mais avec le **panier moyen le plus bas** (£18.60) — signe d'une base B2C locale volumineuse |
+|   | Pays-Bas et Australie ont des paniers moyens de **£121 et £117** — clientèle grossiste B2B |
+|   | La rétention à 1 mois **chute de 36.6% à 15%** entre décembre 2010 et mars 2011 — signal d'alerte fidélisation |
+|   | Le client `14646` génère à lui seul **£280K** de revenu sur 73 commandes, actif 353 jours sur 365 |
 
 ## Partie 2 — Text-to-SQL avec LLM
 
@@ -47,10 +47,10 @@ Question en français → LLM génère le SQL → PostgreSQL exécute → Résul
 - *"Combien de clients uniques ont acheté depuis la France ?"* → exclusion automatique des `NULL` par le LLM, sans instruction explicite
 
 ## Stack technique
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-red)
-![Groq](https://img.shields.io/badge/LLM-Groq%20API-orange)
+![Python]
+![PostgreSQL]
+![SQLAlchemy]
+![Groq]
 
 ## Structure du repo
 ```
@@ -60,9 +60,6 @@ projet-03-sql-analytics/
 ├── text_to_sql.ipynb       — Pipeline Text-to-SQL avec Groq
 └── README.md
 ```
-
-> Le fichier `Online Retail.xlsx` n'est pas inclus (trop volumineux) — voir le lien
-> source ci-dessus pour le télécharger.
 
 ## Auteure
 **Shanice Marvin Tiogang** · Business Analytics & Data Science · Tunis
